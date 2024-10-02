@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Home Appliances Repair Service</title>
+  
+</head>
+<body>
+    
+    <div class="content" style="width: 100%;">
+        <div id="customer-requests" >
+            <h2 style="text-align: center;">Customer List</h2>
+            <p style="text-align: center;">List of customer requests for repair services will be displayed here.</p>
+            <!-- You can use a table or any other structure to display the customer requests -->
+        </div>
+        <hr>
+    </div>
+    <br>
+    <br>
+    <table border="2" style="margin-top: 250px;margin-right: 20px;width: 75%;">
+        <thead style="background-color: aliceblue;color: brown;">
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>CONTACT</th>
+            <th>ITEM</th>
+            <th>SERVIC</th>
+            <th>ADRESEE</th>
+
+
+        </thead>
+        <tbody>
+
+            
+             {% for m in data %}
+            <tr style="background-color: antiquewhite;">
+
+             <td>{{m.name}}</td>
+             <td>{{m.email}}</td>
+
+             <td>{{m.contact}}</td>
+             <td style="text-transform: lowercase;">{{m.item}}</td>
+             <td>{{m.service}}</td>
+             <td>{{m.adresee}}</td>
+             </tr>
+             {%endfor%}
+             </tbody>
+</body>
+<script>
+</script>
+</html>

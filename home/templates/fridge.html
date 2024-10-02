@@ -1,0 +1,107 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="{% static 'ac.css' %}">
+    </head>
+
+    <body>
+        <header>
+            <!-- place navbar here -->
+        </header>
+        <main></main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <form action="" method="post">
+            {% csrf_token %}
+            <nav class="bar1">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Need Help?Call Us:9061322913</a>
+                </div>
+            </nav>
+            <nav class="bar2">
+                <div class="navbar">
+                  
+                  <a class="nav-link active" aria-current="page" href="/aboutus">ABOUT US</a>
+                  <a class="nav-link active" aria-current="page" href="/service">SERVICES</a>
+                 
+    
+                </div>
+            </nav>
+            <br>
+            <div class="hom">
+                <a href="/customer_home"><p>home/{{data}}/AC</p></a>
+            </div>
+            <div class="info">
+                <div class="inside">
+                    <div class="cont">
+                        <h1>fridge SERVICES IN {{data}}</h1><br>
+                        <p>Any Air Conditioner equipment if not properly maintained or serviced on-time may lead to a reduced life cycle of air conditioners in Nagpur.if you are searching best AC repair service in Nagpur,or air conditioning repair in Nagpur,or AC service near you or AC repair service in Nagpur,Then you should be aware of the ServiceOnWheel.com,which connects you with the best AC repair and installation companies in Nagpur or Best HVAC contractors in Nagpur for air conditioning service in Nagpur,
+                            WE PROVIDE -
+                            Air Conditioner repair in Nagpur,air conditioning installation service in Nagpur,Air Conditioner service in Nagpur,Air Conditioner gas charging in Nagpur,Air Conditioner cooling repair in Nagpur,Shifting of Air Conditioner in Nagpur,Air Conditioner repair service in Nagpur,Air conditioning service in Nagpur,HVAC repair service in Nagpur,AC repair near me in Nagpur,Air Conditioner repair near me in Nagpur,AC service near me in Nagpur,Air conditioning repair near me in Nagpur,Cheap air conditioner in Nagpur,HVAC repair in Nagpur,AC companies in Nagpur</p>
+                            <h2>PAY ON VISIT !!! </h2>
+                            <h5>Minimum charge 200</h5>
+                    </div>
+                    <div class="pic">
+                        <img src="{% static 'fridge.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <p style="font-size: medium;font-weight: 500;">chose services</p>
+            <hr>
+            <div class="inv">
+                <div class="inv1">
+                    <div class="inv2">
+                    <label for="">ENTER THE SERVICES:</label><br>
+                    <select name="service" id="">
+                        <option value="door">DOOR</option>
+                        <option value="cooling">COOLING</option>
+                        <option value="voltage">voltage</option>
+
+                    </select>
+
+                    <button type="submit">BOOK</button>
+                    </div>
+
+                </div>
+            </div>
+            
+                
+                    
+                
+               
+            
+           
+            
+        </form>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

@@ -1,0 +1,154 @@
+{% load static %}
+<!doct ype html>
+<html lang="en">
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+    </head>
+
+    <body>
+        <header>
+            <!-- place navbar here -->
+        </header>
+        <main></main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+         {{data}}
+        <nav class="bar1">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Need Help?Call Us:9061322913</a>
+            </div>
+        </nav>
+        <nav class="bar2">
+            <div class="navbar">
+              
+              <a class="nav-link active" aria-current="page" href="/aboutus">ABOUT US</a>
+              <a class="nav-link active" aria-current="page" href="/service">SERVICES</a>
+              <a class="nav-link active" aria-current="page" href="/bookstatus">STATUS</a>
+
+              
+              <a class="nav-link active" aria-current="page" href="{% url 'login_view' %}"><button class="btn btn-primary">LOGOUT</button></a>
+
+            </div>
+        </nav>
+        <div class="banner">
+            <div class="container">
+                <div class="inside-container">
+                    <div class="left">
+                        <h2>Expert Professional Home Services, Book Online</h2><br>
+                        <p>Service On Wheel helps you live smarter, giving you time to focus what's most important.</p><br>
+                        <a href=""><button class="btn btn-info">Contact us</button></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <hr style="color: brown;">
+        <form action="customer_home" method="post">
+        {% csrf_token %}
+        <div class="search-bar">
+            <select name="city" id="">
+              <option value="kochi">KOCHI</option>
+              <option value="banglore">BANGLORE</option>
+              <option value="chennai">CHENNAI</option>
+            </select>
+            <input type="submit" onclick="loca(this.id)">
+            
+        </div>
+        </form>
+        <hr style="color: brown;">
+        <hr style="color: brown;">
+
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="/ac"><h1>AC SERVICES</h1><img src="{% static 'ac.jpg' %}" class="d-block w-100" alt="..." ></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/fridge"><h1>FRIDGE SERVICES</h1><img src="{% static 'fridge.jpg' %}" class="d-block w-100" alt="..." style="height: 100%; width: 50%;"></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/wash"><h1>WASHING MACHINE SERVICES</h1><img src="{% static 'wash.webp' %}" class="d-block w-100" alt="..." style="height: 100%;width: 50%;",></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/oven"><h1>OVEN</h1><img src="{% static 'oven.jpg' %} " class="d-block w-100" alt="..." style="height: 100%;width: 50%;",></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/water"><h1>WATERPURIFIER SERVICES</h1><img src="{% static 'waterpurifier.jpg' %}" class="d-block w-100" alt="..." style="height: 100%;width: 50%;",></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/geyser"><h1>GEYSER</h1><img src="{% static 'geyser.jpg' %}" class="d-block w-100" alt="..." style="height: 100%;width: 50%;",></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/kitchen"><h1>KITCHEN APPLICATIONS</h1><img src="{% static 'KitchenAid.jpg' %}" class="d-block w-100" alt="..." style="height: 100%;width: 50%;",></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/tv"><h1>TV</h1><img src="{% static 'tv.webp' %}" class="d-block w-100" alt="..." style="height: 100%;width: 50%;",></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/plumber"><h1>PLUMBER SERVICES</h1><img src="{% static 'plumber.jpg' %}" class="d-block w-100" alt="..." style="height: 100%;width: 50%;",></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/carp"><h1>CARPENDER SERVICES</h1><img src="{% static 'carpen.jpg' %}" class="d-block w-100" alt="..." style="height: 100%;width: 50%;",></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/elec"><h1>ELECTRICIAN SERVICES</h1><img src="{% static 'elec.jpg' %}" class="d-block w-100" alt="..." style="height: 100%;width: 50%;",></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/pain"><h1>PAINTING SERVICES</h1><img src="{% static 'painter.jpg' %}" class="d-block w-100" alt="..." style="height: 100%;width: 50%;",></a>
+              </div>
+              <div class="carousel-item">
+                <a href="/bath"><h1>BATHROOM SERVICES</h1><img src="{% static 'bath.jpg' %}" class="d-block w-100" alt="..." style="height: 100%;width: 50%;",></a>
+              </div>
+              
+            </div>
+           
+
+
+            
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" >
+              <span class="carousel-control-prev-icon"  style="background-color: brown;"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon"  style="background-color: brown;"></span>
+              <span class="visually-hidden" ></span>
+            </button>
+            
+          </div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <script>
+          alert("PLEASE ENTER THE LOCATION ");
+          function loca(idd){
+            alert("LOCATION SUBMITED");
+          }
+        </script>
+    </body>
+</html>

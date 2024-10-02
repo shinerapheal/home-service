@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Home Appliances Repair Service</title>
+    <style>
+       
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="/admin_home">Admin Home</a><br><br>
+        <a href="/cosreq">Customer Requests</a><br><br>
+        <a href="/workdet">Worker Details</a><br><br>
+        <a href="/cusde">Customer Details</a><br><br>
+       
+    </div>
+    <div class="content" >
+        
+        
+            <form action="" method="post" style="padding-top: 10px;">
+
+                {% csrf_token %}
+                <div id="customer-requests">
+                    <div id="customer-requests" style="margin-top: 2px;margin-left: 250px;width: 80%;text-align: center;">
+                        <h1>CUSTOMER REQUEST</h1>
+                        <hr>
+            
+                </div>
+        
+                <table  style="margin-top: 2px;margin-left: 250px;width: 80%;">
+                    <thead style="background-color: aliceblue;color: brown;">
+                        <th>NAME</th>
+                        <th>EMAIL</th>
+                        <th>CONTACT</th>
+                        <th>ITEM</th>
+                        <th>SERVIC</th>
+                        <th>ADRESEE</th>
+                        <th>WORKER</th>
+                        <th>ACCEPT</th>
+                        <th>STATUS</th>
+                        <th>COMPLETE</th>
+        
+        
+                    </thead>
+                    <tbody>
+        
+                        
+                         {% for m in data %}
+                        <tr style="background-color: antiquewhite;">
+           
+                         <td>{{m.name}}</td>
+                         <td>{{m.email}}</td>
+        
+                         <td>{{m.contact}}</td>
+                         <td style="text-transform: lowercase;">{{m.item}}</td>
+                         <td>{{m.service}}</td>
+                         <td>{{m.adresee}}</td>
+                         <td>
+                            <form action="/alo?idn={{m.id}}" method="POST">
+                                {%csrf_token%}
+                                <select name="wor" id="">
+                                    {% for i in obj %}
+                                    {% if i.type == m.item %}
+                                    
+                                    <option value="{{i.name}} {{i.contact_no}}"><p>{{i.name}}  {{i.contact_no}}</p> 
+                                    </option>
+        
+                
+                                    {% endif %}
+                
+                                
+                                    {% endfor %}
+                                    
+                                 </select>
+                                 <button type="submit">submit</button>
+                            </form>
+                        </td>
+                         <td> 
+                            <button type="submit"><a href="/approve?idn={{m.id}}">APPROVE</a></button>
+                     
+                         </td>
+                         {% if m.sta %}
+        
+                         <td>
+                            <button style="background-color: green;">Worker Assigned</button>
+                            
+                            
+                         </td>
+                         {% else %}
+                         <td>
+                            <button style="background-color: orange;">Worker Not Assigned</button>
+        
+                         </td>
+                         {% endif %}
+                         <td>{{m.crea}}</td>
+        
+        
+                         {% endfor %}
+        
+                         
+        
+                        
+                         
+        
+        
+        
+        
+        
+                        </tr><br>
+                     
+                    </tbody>
+                   
+                </table>
+             </form>
+        
+           
+        </div>
+    </div>
+    <br>
+    <br>
+
+   
+          
+  
+    
+</body>
+</html>

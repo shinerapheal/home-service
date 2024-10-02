@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        hr {
+            background-color: #1abc9c;
+            height: 6px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .order-card {
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h2, h4 {
+            margin: 10px 0;
+            color: #34495e;
+            text-align: center;
+        }
+
+        h2 {
+            background-color: #f7dc6f;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.5em;
+        }
+
+        h4 {
+            background-color: #eaf2f8;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .fee-info {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Status</h1>
+    <hr>
+    {% for i in data %}
+        {% if not i.sta %}
+            <div class="order-card">
+                {% for m in messages %}
+                    <h2>{{ m }}</h2>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="order-card">
+                <h4>MACHINE: {{ i.item }}</h4>
+                <h4>SERVICE: {{ i.service }}</h4>
+                <h4>WORKER DETAILS: {{ i.wor }}</h4>
+                <h4 class="fee-info">Fee: On visit (Min charge 200 rupees)</h4>
+                <h4>WORKER STATUS: Worker assigned</h4>
+                <h4>{{ i.crea }}</h4>
+            </div>
+        {% endif %}
+    {% endfor %}
+
+    <div class="footer">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+</body>
+</html>
